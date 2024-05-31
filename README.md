@@ -38,4 +38,5 @@ Step 9: View Analysis Results:
 The application will display the sentiment analysis results for the entered text.
 
 ## Resources
-- [Dataset on Kaggle]([https://www.kaggle.com/](https://www.kaggle.com/datasets/grikomsn/lazada-indonesian-reviews))
+- [Dataset on Kaggle](https://www.kaggle.com/datasets/grikomsn/lazada-indonesian-reviews)
+
