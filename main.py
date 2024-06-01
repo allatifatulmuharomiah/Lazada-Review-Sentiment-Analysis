@@ -26,15 +26,10 @@ def predict():
     scaler = pickle.load(open("Models/scaler.pkl", "rb"))
     cv = pickle.load(open("Models/countVectorizer.pkl", "rb"))
     try:
-        # Check if the request contains a file (for bulk prediction) or text input
-        if "text" in request.form:
-            # Single string prediction
-            text_input = request.form["text"]
-            predicted_sentiment = single_prediction(predictor, scaler, cv, text_input)
-
-            return jsonify({"prediction": predicted_sentiment})
-        else:
-            return jsonify({"error": "No text input provided."})
+        # Single string prediction
+        text_input = request.form["text"]
+        predicted_sentiment = single_prediction(predictor, scaler, cv, text_input)
+        return jsonify({"prediction": predicted_sentiment})
 
     except Exception as e:
         return jsonify({"error": str(e)})
@@ -56,4 +51,3 @@ def single_prediction(predictor, scaler, cv, text_input):
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
-
